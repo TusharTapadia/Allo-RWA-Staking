@@ -1,13 +1,14 @@
-# Sample Hardhat Project
+# ALLOx Staking Contract
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+This project includes a staking contract for RWA token along with it's factory for easier deployment and faster implementation. This is based on UUPS upgradeable architecture.
+
+The test case includes a forking test case where using impersonateAccount function to mimic staking and transfering and receiving reward. 
 
 Try running some of the following tasks:
 
 ```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
+npx hardhat test test/alloRWAStakingBSC.test.ts 
 npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.ts
 ```
+
+
