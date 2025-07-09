@@ -1,6 +1,8 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
 import "@openzeppelin/hardhat-upgrades";
+import dotenv from "dotenv"
+dotenv.config({ path: ".env" })
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -27,7 +29,11 @@ const config: HardhatUserConfig = {
   },
   networks: {
     hardhat: {
-      chainId: 31337,
+      forking: {
+        url: process.env.RPC_URL || "https://binance.llamarpc.com",
+        blockNumber: 53393514,
+        enabled: true,
+      },
     },
   },
   paths: {
